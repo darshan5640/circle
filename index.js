@@ -30,7 +30,7 @@ app.use((req, res, next) => {
     next();
 });
 
-var port = process.env.port || 80
+var port = process.env.port || 3000
 app.listen(port, () => {
     console.log("Server running on port", port);
 });
