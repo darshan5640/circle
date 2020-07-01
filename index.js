@@ -33,13 +33,13 @@ app.use((req, res, next) => {
 });
 
 var port = process.env.port || 3000
-// app.listen(port, () => {
-//     console.log("Server running on port", port);
-// });
-
-var server = http.createServer(app).listen(port, function () {
-    console.log('Http App started on', port);
+app.listen(port, () => {
+    console.log("Server running on port", port);
 });
+
+// var server = http.createServer(app).listen(port, function () {
+//     console.log('Http App started on', port);
+// });
 
 function setupRoutes() {
     const routes = require("./routes");
