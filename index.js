@@ -8,6 +8,8 @@ const httpStatus = require('http-status');
 var database = require("./database");
 const cors = require('cors');
 const path = require('path');
+var http = require('http');
+
 
 var app = express();
 
@@ -31,8 +33,12 @@ app.use((req, res, next) => {
 });
 
 var port = process.env.port || 3000
-app.listen(port, () => {
-    console.log("Server running on port", port);
+// app.listen(port, () => {
+//     console.log("Server running on port", port);
+// });
+
+var server = http.createServer(app).listen(port, function () {
+    console.log('Http App started on', port);
 });
 
 function setupRoutes() {
