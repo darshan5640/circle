@@ -37,7 +37,7 @@ class CircleController {
         try {
             let response = await Circle.getAll();
             return res.status(httpStatus.OK)
-                .json(new APIResponse(response, 'Circles fetched successfully', httpStatus.OK));
+                .json(new APIResponse(response, 'Circles fetched successful', httpStatus.OK));
         } catch (error) {
             return res.status(httpStatus.INTERNAL_SERVER_ERROR)
                 .json(new APIResponse({}, 'Error getting circles', httpStatus.INTERNAL_SERVER_ERROR, error));
